@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #0d192b;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  max-width: 350px;
+  background-color: #14253d;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0 15px 0;
+}
+
+/*Card header
+-------------------------------------------------------------------*/
+.card-header {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-header .card-image {
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 99%;
+  width: 100%;
+  background: #00fff7;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.card-header:hover::after {
+  opacity: .5;
+  visibility: visible;
+}
+
+img.icon-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-header:hover img.icon-view {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*Card body
+------------------------------------------------------------------*/
+.card-body {
+  margin-top: 20px;
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+.card-body a h3 {
+  color: white;
+}
+
+.card-body a h3:hover {
+  color: #00fff7;
+}
+
+.card-body .card-text {
+  font-size: 18px;
+  color: #8bacda;
+  padding: 10px 0 15px 0;
+  font-weight: lighter;
+}
+
+.card-body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 0 15px 0;
+  border-bottom: 1px solid #2f415b;
+}
+
+.card-body .wrapper .price span {
+  color: #00fff7;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.card-body .wrapper .countdown span {
+  color: #8bacda;
+  margin-left: 5px;
+}
+
+.card-body .wrapper img, .card-body .wrapper span {
+  vertical-align: middle;
+}
+
+/* Card footer 
+----------------------------------------------------------------*/
+.card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+
+.card-footer img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.card-footer .author-name {
+  padding-top: 5px;
+  margin-left: 20px;
+  color: #8bacda;
+}
+
+.card-footer .author-name a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-footer .author-name a:hover {
+  color: #00fff7;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */

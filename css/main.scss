@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+$colors: (
+    primary-soft-blue: hsl(215, 51%, 70%),
+    primary-cyan: hsl(178, 100%, 50%),
+    main-bg: hsl(217, 54%, 11%),
+    card-bg: hsl(216, 50%, 16%),
+    line: hsl(215, 32%, 27%),
+    white: hsl(0, 0%, 100%),
+);
+
+$Font-size-paragraph: 18px;
+
+// SCSS Function
+@function color($colorName){
+    @return map-get($colors, $colorName);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: color(main-bg); //Invoking the function 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+  
+.card {
+    max-width: 350px;
+    background-color: color(card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0 15px 0;
+}
+
+/*Card header
+-------------------------------------------------------------------*/
+
+.card-header {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    
+
+    .card-image {
+        width: 100%;  
+        background-size: cover;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+}
+
+.card-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 99%;
+    width: 100%;
+    background: color(primary-cyan);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+
+}
+
+.card-header:hover::after {
+    opacity: .5;
+    visibility: visible;
+}
+
+img.icon-view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    transition: opacity 0.2s ease;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card-header:hover img.icon-view {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*Card body
+------------------------------------------------------------------*/
+        
+.card-body{
+
+    margin-top: 20px;
+
+    a {
+        text-decoration: none;
+
+        h3 {
+            color: color(white);
+
+            &:hover {
+                color: color(primary-cyan);
+            }
+        }
+    } 
+    
+    .card-text {
+
+        font-size: $Font-size-paragraph;
+        color: color(primary-soft-blue);
+        padding: 10px 0 15px 0;
+        font-weight: lighter;
+    }
+
+    .wrapper {
+
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0 15px 0;
+        border-bottom: 1px solid color(line);
+
+        .price {
+
+            span {
+                color: color(primary-cyan);
+                margin-left: 5px;
+                font-weight: 600;
+            }
+
+        }
+
+        .countdown {
+
+            span {
+                color: color(primary-soft-blue);
+                margin-left: 5px;
+            }
+        }
+
+        img, span {
+            vertical-align: middle;
+        }
+    }
+
+}
+
+/* Card footer 
+----------------------------------------------------------------*/
+
+.card-footer {
+    display: flex;
+    margin-top: 15px;
+
+    img {
+        width: 30px;
+        height: 30px;
+        border: 1px solid color(white);
+        border-radius: 50%;
+    }
+
+    .author-name{
+        padding-top: 5px;
+        margin-left: 20px;
+        color: color(primary-soft-blue);
+
+        a {
+            text-decoration: none;
+            color: color(white);
+
+            &:hover{
+                color: color(primary-cyan);
+            }
+        }
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
